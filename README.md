@@ -91,5 +91,24 @@ alguns sibulos markdown
 
 ---
 - Criar **listas com caixas de tarefas** (por exemplo: `[x]`, `[ ]`) com estilo GitHub
+---
+O ícone mais comum para **Markdown** é o **logotipo oficial** que representa o formato `.md`. Ele normalmente aparece como um **"M↓"** (um "M" com uma seta para baixo), simbolizando o conceito de "markup que desce para renderização".
+---
+### Exemplos de ícones:
+1. **Unicode simples (texto)**:  
+   Você pode usar um emoji ou símbolo representativo:  
+   - 📄 ou 📝 (para ficheiros de texto)
+   - ⬇️ (representando "down" em Markdown)
+   - 💻 (para indicar ficheiros de programação/texto)
 
+2. **Ícone oficial em SVG/PNG**:  
+   O ícone oficial pode ser encontrado em repositórios como:
+   - [https://simpleicons.org/icons/markdown.svg](https://simpleicons.org/icons/markdown.svg)  
+   - [https://github.com/markdown](https://github.com/markdown)
+
+3. **Font Awesome** (se estiver a usar web ou interfaces com suporte a ícones):
+   - `<i class="fab fa-markdown"></i>` — quando usa o **Font Awesome**
+
+4. **Imagem do logotipo**:
+   ![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
 
