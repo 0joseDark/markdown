@@ -111,4 +111,126 @@ O ícone mais comum para **Markdown** é o **logotipo oficial** que representa o
 
 4. **Imagem do logotipo**:
    ![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
+---
+**vários exemplos práticos** de como usar um **ícone de Markdown** em diferentes contextos:
+---
+### ✅ 1. **HTML + CSS com ícone SVG**
+```html
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Ícone Markdown</title>
+  <style>
+    button {
+      font-size: 16px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+</head>
+<body>
 
+  <button>
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg" alt="Markdown">
+    Exportar para Markdown
+  </button>
+
+</body>
+</html>
+```
+
+---
+
+### ✅ 2. **HTML com Font Awesome (ícone `fab fa-markdown`)**
+```html
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown FA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <button>
+    <i class="fab fa-markdown"></i> Guardar como Markdown
+  </button>
+
+</body>
+</html>
+```
+
+---
+
+### ✅ 3. **Python com Tkinter – Ícone em botão**
+```python
+import tkinter as tk
+from PIL import Image, ImageTk
+import requests
+from io import BytesIO
+
+janela = tk.Tk()
+janela.title("Exportar Markdown")
+
+# Carrega imagem SVG convertida para PNG (deve ser PNG)
+url = "https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg"
+resposta = requests.get(url)
+img = Image.open(BytesIO(resposta.content)).resize((24, 24))
+
+icon = ImageTk.PhotoImage(img)
+
+# Botão com ícone
+btn = tk.Button(janela, text=" Exportar Markdown", image=icon, compound="left")
+btn.pack(pady=20)
+
+janela.mainloop()
+```
+> ⚠️ Este exemplo precisa dos módulos `Pillow` e `requests`.
+
+---
+
+### ✅ 4. **Markdown com emoji ou texto representativo**
+```markdown
+## 📝 Exportar para Markdown
+
+Clique no botão abaixo para guardar o ficheiro em formato `.md`.
+
+[⬇️ Descarregar Markdown](#)
+```
+
+---
+
+### ✅ 5. **PyQt5 com ícone em botão**
+```python
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
+from PyQt5.QtGui import QIcon
+import sys
+
+class Janela(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Markdown com Ícone")
+        self.setGeometry(100, 100, 300, 100)
+        
+        layout = QVBoxLayout()
+        botao = QPushButton(" Exportar Markdown")
+        botao.setIcon(QIcon("markdown_icon.png"))  # Coloca a imagem Markdown no mesmo diretório
+        layout.addWidget(botao)
+        
+        self.setLayout(layout)
+
+app = QApplication(sys.argv)
+window = Janela()
+window.show()
+sys.exit(app.exec_())
+```
+> Usa uma imagem como `"markdown_icon.png"` (pode converter de SVG para PNG com sites online).
+
+---
